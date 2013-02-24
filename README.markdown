@@ -19,3 +19,7 @@ Then set yourself up a mapping:
 ``` vim
 map <Leader>m :CtrlPModified<CR>
 ```
+
+## License
+
+MIT License.
