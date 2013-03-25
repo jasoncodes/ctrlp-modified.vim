@@ -25,7 +25,7 @@ endfunc
 
 function! ctrlp#modified#accept(mode, str)
   call ctrlp#exit()
-  execute "e ".a:str
+  execute "e ".fnameescape(a:str)
 endfunction
 
 function! ctrlp#modified#exit()
