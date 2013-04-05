@@ -1,1 +1,1 @@
-command! CtrlPModified cal ctrlp#init(ctrlp#modified#id())
+command! CtrlPModified call ctrlp#init(ctrlp#modified#id())
