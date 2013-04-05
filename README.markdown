@@ -14,10 +14,11 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'jasoncodes/ctrlp-modified.vim'
 ```
 
-Then set yourself up a mapping:
+Then set yourself up some mappings:
 
 ``` vim
 map <Leader>m :CtrlPModified<CR>
+map <Leader>M :CtrlPBranch<CR>
 ```
 
 ## License
