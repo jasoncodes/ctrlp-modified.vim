@@ -19,8 +19,10 @@ else
   let g:ctrlp_ext_vars = [s:branch_var]
 endif
 
+let s:self_path = expand("<sfile>")
+
 function! ctrlp#branch#init()
-  return split(system("git diff $(git merge-base origin/HEAD HEAD).. --name-only | sort -u | xargs find 2> /dev/null"), "\n")
+  return split(system('"$(dirname '.shellescape(s:self_path).')/../../lib/branch.sh"'), "\n")
 endfunc
 
 function! ctrlp#branch#accept(mode, str)
