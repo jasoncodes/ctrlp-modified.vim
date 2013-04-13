@@ -1,7 +1,6 @@
 #!/bin/bash -e
-FILES="$(git ls-files --unmerged)"
-if [[ -n "$FILES" ]]; then
-  echo "$FILES" | awk '{print $4}' | sort -u
+if [[ -e .git/MERGE_HEAD ]]; then
+  git ls-files --others --modified --exclude-standard | sort -u
 else
   FILES="$(git status --porcelain -z --untracked-files=all | tr '\0' '\n')"
   if [[ -n "$FILES" ]]; then
