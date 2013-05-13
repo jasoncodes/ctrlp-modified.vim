@@ -6,7 +6,7 @@ let g:loaded_ctrlp_branch = 1
 let s:branch_var = {
 \  'init':   'ctrlp#branch#init()',
 \  'exit':   'ctrlp#branch#exit()',
-\  'accept': 'ctrlp#branch#accept',
+\  'accept': 'ctrlp#acceptfile',
 \  'lname':  'branch',
 \  'sname':  'branch',
 \  'type':   'path',
@@ -24,11 +24,6 @@ let s:self_path = expand("<sfile>")
 function! ctrlp#branch#init()
   return split(system('"$(dirname '.shellescape(s:self_path).')/../../lib/branch.sh"'), "\n")
 endfunc
-
-function! ctrlp#branch#accept(mode, str)
-  call ctrlp#exit()
-  execute "e ".fnameescape(a:str)
-endfunction
 
 function! ctrlp#branch#exit()
 endfunction

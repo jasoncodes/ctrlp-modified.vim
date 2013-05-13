@@ -6,7 +6,7 @@ let g:loaded_ctrlp_modified = 1
 let s:modified_var = {
 \  'init':   'ctrlp#modified#init()',
 \  'exit':   'ctrlp#modified#exit()',
-\  'accept': 'ctrlp#modified#accept',
+\  'accept': 'ctrlp#acceptfile',
 \  'lname':  'modified',
 \  'sname':  'modified',
 \  'type':   'path',
@@ -24,11 +24,6 @@ let s:self_path = expand("<sfile>")
 function! ctrlp#modified#init()
   return split(system('"$(dirname '.shellescape(s:self_path).')/../../lib/modified.sh"'), "\n")
 endfunc
-
-function! ctrlp#modified#accept(mode, str)
-  call ctrlp#exit()
-  execute "e ".fnameescape(a:str)
-endfunction
 
 function! ctrlp#modified#exit()
 endfunction
