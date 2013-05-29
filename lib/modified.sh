@@ -1,5 +1,5 @@
 #!/bin/bash -e
-if [[ -e .git/MERGE_HEAD ]]; then
+if [[ -e .git/MERGE_HEAD ]] || [[ -d .git/rebase-merge ]]; then
   git ls-files --others --modified --exclude-standard | sort -u
 else
   FILES="$(git status --porcelain -z --untracked-files=all | tr '\0' '\n')"
