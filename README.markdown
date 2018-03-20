@@ -7,6 +7,7 @@ you just want to catch up on the progress you've made after coming back from a b
 
 * `:CtrlPModified` shows all files which have been modified since your last commit.
 * `:CtrlPBranch` shows all files modified on your current branch.
+* `:CtrlPBranchModified` combines the two.
 
 ## Installation
 
@@ -21,7 +22,8 @@ Then set yourself up some mappings:
 
 ``` vim
 map <Leader>m :CtrlPModified<CR>
-map <Leader>M :CtrlPBranch<CR>
+map <Leader>b :CtrlPBranch<CR>
+map <Leader>B :CtrlPBranchModified<CR>
 ```
 
 ## License
