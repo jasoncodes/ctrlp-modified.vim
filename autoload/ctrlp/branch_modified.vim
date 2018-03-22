@@ -1,4 +1,3 @@
-
 if exists('g:loaded_ctrlp_branch_modified') && g:loaded_ctrlp_branch_modified
   finish
 endif
