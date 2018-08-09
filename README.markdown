@@ -26,6 +26,11 @@ map <Leader>b :CtrlPBranch<CR>
 map <Leader>B :CtrlPBranchModified<CR>
 ```
 
+## Configuration
+
+The `g:ctrlp#modified#excludes` variable may optionally be set to a string with a regex for file
+paths to exclude from the search, such as `"^vendor"`.
+
 ## License
 
 MIT License.

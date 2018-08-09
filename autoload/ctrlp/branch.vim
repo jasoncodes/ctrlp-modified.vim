@@ -22,7 +22,11 @@ endif
 let s:self_path = expand("<sfile>")
 
 function! ctrlp#branch#init()
-  return split(system('"$(dirname '.shellescape(s:self_path).')/../../lib/branch.sh"'), "\n")
+  let l:cmd = '"$(dirname '.shellescape(s:self_path).')/../../lib/branch.sh"'
+  if exists('g:ctrlp#modified#excludes')
+    let l:cmd .= ' | grep -v '.shellescape(g:ctrlp#modified#excludes)
+  endif
+  return split(system(l:cmd), "\n")
 endfunc
 
 function! ctrlp#branch#exit()
