@@ -4,6 +4,6 @@ if [ -e .git/MERGE_HEAD ] || [ -d .git/rebase-merge ] || [ -d .git/rebase-apply 
 else
   FILES="$(git status --porcelain -z --untracked-files=all | tr '\0' '\n')"
   if [ -n "$FILES" ]; then
-    echo "$FILES" | cut -c 4- | tr '\n' '\0' | xargs -0 find 2> /dev/null
+    echo "$FILES" | cut -c 4- | tr '\n' '\0' | xargs -0 find 2> /dev/null || true
   fi
 fi
